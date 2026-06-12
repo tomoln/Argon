@@ -1,0 +1,11 @@
+{{- /* TL;DR ブロック表示パーシャル
+  記事の先頭に TL;DR を表示します。
+  .Params.tldr が設定されている場合のみレンダリングされます。
+  Copyright (c) 2026 Tomo. All rights reserved.
+*/ -}}
+{{- if .Params.tldr -}}
+<blockquote class="tldr-block">
+  <strong class="tldr-label">TL;DR</strong>
+  <p class="tldr-content">{{ .Params.tldr | .RenderString }}</p>
+</blockquote>
+{{- end -}}

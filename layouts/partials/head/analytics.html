@@ -1,0 +1,30 @@
+{{- /* アクセス解析スクリプト
+  monetization.enabled = true の場合のみ読み込みます。
+  analytics_provider で GA4 / Plausible を切り替えます。
+  Copyright (c) 2026 Tomo. All rights reserved.
+*/ -}}
+{{- if .Site.Params.monetization.enabled -}}
+  {{- $provider := .Site.Params.monetization.analytics_provider | default "ga4" -}}
+  {{- $analyticsID := .Site.Params.monetization.analytics -}}
+
+  {{- if eq $provider "ga4" -}}
+    {{- with $analyticsID -}}
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ . }}', {
+        anonymize_ip: true,
+        cookie_flags: 'SameSite=None;Secure'
+      });
+    </script>
+    {{- end -}}
+  {{- else if eq $provider "plausible" -}}
+    {{- with $analyticsID -}}
+    <!-- Plausible Analytics -->
+    <script defer data-domain="{{ . }}" src="https://plausible.io/js/script.js"></script>
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

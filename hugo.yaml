@@ -1,0 +1,110 @@
+# Hugo 基本設定 — PaperMod テーマ対応 完全版
+# Copyright (c) 2026 Tomo. All rights reserved.
+
+baseURL: "https://tomoln.netlify.app/"
+title: "Tomo's Dev Blog"
+theme: PaperMod
+languageCode: ja-jp
+defaultContentLanguage: ja
+enableRobotsTXT: true
+enableEmoji: true
+pygmentsUseClasses: true
+
+# パーマリンク設定
+permalinks:
+  posts: "/posts/:slug/"
+  pages: "/:slug/"
+
+# 出力フォーマット
+outputs:
+  home: ["HTML", "RSS", "JSON"]
+  page: ["HTML"]
+  section: ["HTML", "RSS"]
+  taxonomy: ["HTML", "RSS"]
+  term: ["HTML", "RSS"]
+
+# タクソノミー
+taxonomies:
+  category: categories
+  tag: tags
+
+# マークダウン設定
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+            - - \[
+              - \]
+            - - $$
+              - $$
+          inline:
+            - - \(
+              - \)
+            - - $
+              - $
+  highlight:
+    codeFences: true
+    guessSyntax: true
+    lineNos: true
+    style: monokai
+    tabWidth: 4
+
+# Sass/SCSS
+sass:
+  style: compressed
+
+# メディアタイプ設定
+mediaTypes:
+  application/feed+json:
+    suffixes:
+      - json
+
+# 出力フォーマット設定
+outputFormats:
+  JSON:
+    mediaType: application/feed+json
+    baseName: feed
+    isPlainText: true
+    rel: alternate
+    isHTML: false
+    noUgly: true
+    permalinkable: false
+
+# サービスの設定
+services:
+  instagram:
+    disableInlineCSS: true
+  x:
+    disableInlineCSS: true
+
+# プライバシー設定
+privacy:
+  disqus:
+    disable: true
+  googleAnalytics:
+    anonymizeIP: true
+    disable: false
+    respectDoNotTrack: true
+    useSessionStorage: true
+  instagram:
+    disable: true
+  x:
+    disable: false
+    enableDNT: true
+    simple: true
+  vimeo:
+    disable: true
+  youtube:
+    disable: false
+    privacyEnhanced: true
+
+# 著者情報
+author:
+  name: "Tomo"
+  email: ""
+  url: "https://tomoln.netlify.app/"

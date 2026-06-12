@@ -1,0 +1,25 @@
+{{- /* Google AdSense 広告ユニット
+  monetization.enabled = true かつ adsense が設定されている場合のみ表示します。
+  Copyright (c) 2026 Tomo. All rights reserved.
+*/ -}}
+{{- if and .Site.Params.monetization.enabled .Site.Params.monetization.adsense -}}
+  {{- $adsenseID := .Site.Params.monetization.adsense -}}
+  {{- $adSlot := .Site.Params.monetization.adsense_slot | default "" -}}
+  
+  <!-- AdSense スクリプト -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ $adsenseID }}"
+    crossorigin="anonymous"></script>
+  
+  {{- if $adSlot -}}
+  <!-- 広告ユニット -->
+  <ins class="adsbygoogle ad-unit"
+    style="display:block;min-height:90px;margin:2rem 0;"
+    data-ad-client="{{ $adsenseID }}"
+    data-ad-slot="{{ $adSlot }}"
+    data-ad-format="auto"
+    data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  {{- end -}}
+{{- end -}}

@@ -1,0 +1,47 @@
+# Netlify デプロイ設定 — Hugo v0.163.1
+# Copyright (c) 2026 Tomo. All rights reserved.
+
+[build]
+  command = "hugo --gc --minify"
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.163.1"
+
+# 本番環境
+[context.production]
+  environment = { HUGO_ENV = "production" }
+
+# ブランチデプロイ（ステージング）
+[context.branch-deploy]
+  command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
+  environment = { HUGO_ENV = "staging" }
+
+# デプロイプレビュー（PR）
+[context.deploy-preview]
+  command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
+  environment = { HUGO_ENV = "staging" }
+
+# ヘッダー設定（セキュリティ + SEO）
+[[headers]]
+  for = "/*"
+    [headers.values]
+      X-Content-Type-Options = "nosniff"
+      X-Frame-Options = "DENY"
+      Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/posts/*"
+    [headers.values]
+      X-Robots-Tag = "index, follow, max-snippet:-1, max-image-preview:large"
+
+# リダイレクト設定
+[[redirects]]
+  from = "/blog/*"
+  to = "/posts/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/articles/*"
+  to = "/posts/:splat"
+  status = 301

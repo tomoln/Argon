@@ -1,0 +1,102 @@
+# Hugo パラメータ設定 — PaperMod + 収益化 + SEO/GEO
+# Copyright (c) 2026 Tomo. All rights reserved.
+
+params:
+  # 環境設定
+  env: production
+  description: "AI時代のソフトウェア開発実践知"
+  defaultTheme: auto
+  disableThemeToggle: false
+
+  # 表示設定
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowToc: true
+  TocOpen: false
+
+  # ナビゲーション
+  homeInfoParams:
+    Title: "Tomo's Dev Blog"
+    Content: "AI時代のソフトウェア開発実践知 — Hugo + Netlify で運用する個人テックブログ"
+
+  # ソーシャルリンク
+  socialIcons:
+    - name: github
+      url: "https://github.com/yourhandle"
+    - name: twitter
+      url: "https://x.com/yourhandle"
+    - name: rss
+      url: "index.xml"
+
+  # プロフィール
+  profileMode:
+    enabled: false
+
+  # カバー画像設定
+  cover:
+    hiddenInList: false
+    hiddenInSingle: false
+    linkFullImages: true
+
+  # OGP デフォルト画像
+  images: ["images/og-default.png"]
+
+  # robots
+  robots: "index, follow"
+
+  # フィード設定
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 2
+    keys:
+      - title
+      - description
+      - tags
+      - categories
+
+  # 収益化設定
+  monetization:
+    enabled: false
+    adsense: ""
+    analytics: ""
+    analytics_provider: "ga4"   # "ga4" または "plausible"
+
+  # LLMクローラー設定（GEO対策）
+  llmCrawlers:
+    enabled: true
+    # 各クローラーの挙動を制御（allow / block / tldr-only）
+    gptbot: "allow"
+    chatgpt_user: "allow"
+    claude: "allow"
+    gemini: "allow"
+    perplexity: "allow"
+
+  # アフィリエイト設定
+  affiliate:
+    amazon_tag: ""
+    rakuten_affiliate_id: ""
+
+  # 編集リンク
+  editPost:
+    URL: ""
+    Text: "Suggest Changes"
+    appendFilePath: true
+
+  # ラベル表示
+  label:
+    text: "Tomo's Dev Blog"
+    icon: ""
+    iconHeight: 35
+
+  # フッター
+  footer:
+    text: "Powered by Hugo & PaperMod"
+    since: 2026

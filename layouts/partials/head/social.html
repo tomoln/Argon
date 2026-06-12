@@ -1,0 +1,69 @@
+{{- /* OGP + Twitter Cards メタタグ
+  記事ページとトップページで適切に出力します。
+  Copyright (c) 2026 Tomo. All rights reserved.
+*/ -}}
+
+{{- $title := .Title | default .Site.Title -}}
+{{- $description := .Description | default .Summary | default .Site.Params.description -}}
+{{- $siteName := .Site.Title -}}
+{{- $url := .Permalink -}}
+{{- $locale := "ja_JP" -}}
+{{- $image := "" -}}
+
+{{- /* 画像の解決 */ -}}
+{{- if .Params.images -}}
+  {{- $image = index .Params.images 0 | absURL -}}
+{{- else if .Site.Params.images -}}
+  {{- $image = index .Site.Params.images 0 | absURL -}}
+{{- end -}}
+
+{{- /* OGP (Open Graph Protocol) */ -}}
+<meta property="og:title" content="{{ $title }}" />
+<meta property="og:description" content="{{ $description }}" />
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+<meta property="og:url" content="{{ $url }}" />
+<meta property="og:site_name" content="{{ $siteName }}" />
+<meta property="og:locale" content="{{ $locale }}" />
+
+{{- with $image -}}
+<meta property="og:image" content="{{ . }}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+{{- end -}}
+
+{{- /* 記事固有の OGP */ -}}
+{{- if .IsPage -}}
+  {{- if not .PublishDate.IsZero -}}
+<meta property="article:published_time" content="{{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" }}" />
+  {{- end -}}
+  {{- if not .Lastmod.IsZero -}}
+<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}" />
+  {{- end -}}
+  {{- with .Params.tags -}}
+    {{- range . -}}
+<meta property="article:tag" content="{{ . }}" />
+    {{- end -}}
+  {{- end -}}
+  {{- with .Params.categories -}}
+    {{- range . -}}
+<meta property="article:section" content="{{ . }}" />
+    {{- end -}}
+  {{- end -}}
+<meta property="article:author" content="{{ .Site.Params.author.name | default "Tomo" }}" />
+{{- end -}}
+
+{{- /* Twitter Cards */ -}}
+<meta name="twitter:card" content="{{ if $image }}summary_large_image{{ else }}summary{{ end }}" />
+<meta name="twitter:title" content="{{ $title }}" />
+<meta name="twitter:description" content="{{ $description }}" />
+{{- with $image -}}
+<meta name="twitter:image" content="{{ . }}" />
+{{- end -}}
+{{- with .Site.Params.socialIcons -}}
+  {{- range . -}}
+    {{- if eq .name "twitter" -}}
+<meta name="twitter:site" content="{{ .url }}" />
+<meta name="twitter:creator" content="{{ .url }}" />
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

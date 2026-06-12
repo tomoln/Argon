@@ -1,0 +1,49 @@
+{{- /* アフィリエイトリンクショートコード
+  使用方法:
+    {{< affiliate "ASINコード" "商品名" >}}
+    {{< affiliate url="https://..." title="商品名" image="/images/..." >}}
+  
+  monetization.enabled が false の場合はテキストリンクのみ表示します。
+  
+  パラメータ:
+    - url:    アフィリエイトURL（省略時は Amazon ASIN から自動生成）
+    - title:  商品名（必須）
+    - image:  商品画像URL（オプション）
+    - asin:   Amazon ASINコード（url未指定時に使用）
+  
+  Copyright (c) 2026 Tomo. All rights reserved.
+*/ -}}
+
+{{- $url := .Get "url" | default "" -}}
+{{- $title := .Get "title" | default (.Get 1) | default "" -}}
+{{- $image := .Get "image" | default "" -}}
+{{- $asin := .Get "asin" | default (.Get 0) | default "" -}}
+{{- $monetizationEnabled := .Site.Params.monetization.enabled | default false -}}
+
+{{- /* Amazon アフィリエイトURLを自動生成 */ -}}
+{{- if and (not $url) $asin -}}
+  {{- $amazonTag := .Site.Params.affiliate.amazon_tag | default "" -}}
+  {{- if $amazonTag -}}
+    {{- $url = printf "https://www.amazon.co.jp/dp/%s?tag=%s&linkCode=ogi&th=1&psc=1" $asin $amazonTag -}}
+  {{- else -}}
+    {{- $url = printf "https://www.amazon.co.jp/dp/%s" $asin -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if $title -}}
+  {{- if $monetizationEnabled -}}
+    {{- /* 収益化有効: アフィリエイトリンクカード */ -}}
+    <div class="affiliate-card">
+      <a href="{{ $url }}" rel="nofollow sponsored noopener" target="_blank" class="affiliate-link">
+        {{- if $image -}}
+        <img src="{{ $image }}" alt="{{ $title }}" class="affiliate-image" loading="lazy" />
+        {{- end -}}
+        <span class="affiliate-title">{{ $title }}</span>
+        <span class="affiliate-badge">PR</span>
+      </a>
+    </div>
+  {{- else -}}
+    {{- /* 収益化無効: 通常リンク */ -}}
+    <a href="{{ $url }}" rel="noopener" target="_blank">{{ $title }}</a>
+  {{- end -}}
+{{- end -}}
