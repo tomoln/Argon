@@ -10,7 +10,7 @@ params:
 
   # 表示設定
   ShowReadingTime: true
-  ShowShareButtons: true
+  ShowShareButtons: false
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
@@ -25,10 +25,6 @@ params:
 
   # ソーシャルリンク
   socialIcons:
-    - name: github
-      url: "https://github.com/yourhandle"
-    - name: twitter
-      url: "https://x.com/yourhandle"
     - name: rss
       url: "index.xml"
 
