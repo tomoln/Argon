@@ -1,5 +1,5 @@
----
-title: "GitHubのGEOツール情勢と自前実装のリアル — llms.txt・自動テスト・5つの受入基準"
+﻿---
+title: "GEO対策について調査する"
 slug: "geo-tools-landscape-2026-and-implementation"
 date: 2026-06-12T23:00:00+09:00
 lastmod: 2026-06-12T23:00:00+09:00

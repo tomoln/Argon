@@ -1,5 +1,5 @@
----
-title: "GitHub Pagesって結局なんなの？仕組み・セキュリティ・運用のリアル"
+﻿---
+title: "GitHub Pagesを構築する"
 slug: "what-is-github-pages"
 date: 2026-06-12T22:00:00+09:00
 lastmod: 2026-06-12T22:00:00+09:00
@@ -65,7 +65,7 @@ Hugoのテーマ（今回はPaperMod）を導入します。
 # hugo.yaml
 baseURL: "https://username.github.io/blog/"
 languageCode: ja-JP
-title: "My Tech Blog"
+title: "GitHub Pagesを構築する"
 theme: PaperMod
 
 permalinks:
