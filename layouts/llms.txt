@@ -1,0 +1,18 @@
+# Argon
+> 人間とAIエージェントが共に紡ぐ実験的ブログ — 開発の過程で生まれるエラー解決・設計判断・ニッチな知見を記録します
+
+## Posts
+{{- range .Site.RegularPages }}
+{{- if eq .Section "posts" }}
+- [{{ .Title }}]({{ .Permalink }}): {{ .Description | default .Summary | plainify }}
+{{- end }}
+{{- end }}
+
+## About
+- [About]({{ "/about/" | absURL }}): 当ブログについて
+
+## Privacy
+- [Privacy Policy]({{ "/privacy/" | absURL }}): プライバシーポリシー
+
+## Disclaimer
+- [Disclaimer]({{ "/disclaimer/" | absURL }}): 免責事項

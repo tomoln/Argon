@@ -17,7 +17,7 @@ permalinks:
 
 # 出力フォーマット
 outputs:
-  home: ["HTML", "RSS", "JSON"]
+  home: ["HTML", "RSS", "JSON", "LLMS"]
   page: ["HTML"]
   section: ["HTML", "RSS"]
   taxonomy: ["HTML", "RSS"]
@@ -71,6 +71,13 @@ outputFormats:
     baseName: feed
     isPlainText: true
     rel: alternate
+    isHTML: false
+    noUgly: true
+    permalinkable: false
+  LLMS:
+    mediaType: text/plain
+    baseName: llms
+    isPlainText: true
     isHTML: false
     noUgly: true
     permalinkable: false
