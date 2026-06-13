@@ -389,7 +389,7 @@ export async function handler(
 
 名前は「My Cow...じゃなくて、My Co-Worker」の略です。2は2作目という意味で、最初はPython + ローカルSQLiteで作っていましたが、フルクラウド版への移行に伴ってバージョンが上がりました。
 
-リポジトリはprivateで、argonpt2プロジェクトのサブディレクトリとして管理しています。CDKのスタック定義、Lambdaのコード、CLI、Discord Botのコードがすべて同じリポジトリに入っています。
+CDKのスタック定義、Lambdaのコード、CLI、Discord Botのコードがすべて1つのリポジトリで管理されています。
 
 ### 今後の課題
 
@@ -401,7 +401,6 @@ export async function handler(
 
 **関連リンク**
 
-- このブログのリポジトリ: <https://github.com/tomoln/argonpt2>
 - AWS CDK: <https://docs.aws.amazon.com/cdk/v2/guide/home.html>
 - Discord Interactions: <https://discord.com/developers/docs/interactions/receiving-and-responding>
 - Agent Arc（12エージェントパイプライン）の紹介記事: </posts/agent-arc-first-complete-run/>
