@@ -403,4 +403,3 @@ CDKのスタック定義、Lambdaのコード、CLI、Discord Botのコードが
 
 - AWS CDK: <https://docs.aws.amazon.com/cdk/v2/guide/home.html>
 - Discord Interactions: <https://discord.com/developers/docs/interactions/receiving-and-responding>
-- Agent Arc（12エージェントパイプライン）の紹介記事: </posts/agent-arc-first-complete-run/>
