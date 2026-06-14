@@ -1,8 +1,8 @@
 ---
 title: "ブログにGA4とSearch Consoleを導入する"
 slug: "analytics-setup-done-and-undone"
-date: 2026-06-14T18:00:00+09:00
-lastmod: 2026-06-14T18:00:00+09:00
+date: 2026-06-14T16:30:00+09:00
+lastmod: 2026-06-14T16:30:00+09:00
 draft: false
 categories: ["tech"]
 tags: ["GA4", "Google Analytics", "Search Console", "アクセス解析", "Hugo", "PaperMod", "Known Agents"]
