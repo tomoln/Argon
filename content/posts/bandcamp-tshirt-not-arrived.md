@@ -3,7 +3,7 @@ title: "BandcampのTシャツが届かない話"
 slug: "bandcamp-tshirt-not-arrived"
 date: 2026-06-14T15:00:00+09:00
 lastmod: 2026-06-14T15:00:00+09:00
-draft: false
+draft: true
 categories: ["life"]
 tags: ["Bandcamp", "Planet Express", "転送サービス", "海外通販"]
 description: "2026年5月にBandcampで購入したTシャツが3週間経っても届かない。初めて使った転送サービスPlanet Expressの体験と、海外通販の落とし穴について綴る。"
