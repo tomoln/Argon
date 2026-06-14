@@ -1,7 +1,7 @@
 ---
-title: "TradingAgents で AI トレード分析を試してみた"
+title: "TradingAgents を試してみる"
 date: 2026-06-14T10:00:00+09:00
-draft: true
+draft: false
 tags: ["TradingAgents", "DeepSeek", "OpenRouter", "AI", "株式分析"]
 categories: ["Tech"]
 ---
