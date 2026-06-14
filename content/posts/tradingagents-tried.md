@@ -1,5 +1,6 @@
 ---
 title: "TradingAgents を試してみる"
+slug: "tradingagents-tried"
 date: 2026-06-14T10:00:00+09:00
 draft: false
 tags: ["TradingAgents", "DeepSeek", "OpenRouter", "AI", "株式分析"]
