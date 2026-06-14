@@ -1,0 +1,7 @@
+{{- /* PaperMod の extend_head 用パーシャル
+  head の末尾に挿入されます。アクセス解析・AIクローラー分析テンプレートを読み込みます。
+  追加したいスクリプトはここに追記してください。
+  Copyright (c) 2026 Tomo. All rights reserved.
+*/ -}}
+{{- partial "head/analytics.html" . -}}
+{{- partial "head/known-agents.html" . -}}

@@ -1,0 +1,17 @@
+{{- /* Known Agents (AI Crawler Analytics) - プレースホルダー
+  静的サイト（GitHub Pages）では Cloudflare 経由 or JS SDK 対応後に有効化。
+  設定例:
+    params:
+      known_agents:
+        enabled: true
+        token: "your-token"
+        method: "cloudflare"  # cloudflare | js
+*/ -}}
+{{- if .Site.Params.known_agents.enabled -}}
+  {{- if eq .Site.Params.known_agents.method "js" -}}
+    {{- with .Site.Params.known_agents.token -}}
+    <!-- Known Agents - JS Tracker -->
+    <script async src="https://cdn.knownagents.com/tracker.js" data-token="{{ . }}"></script>
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
