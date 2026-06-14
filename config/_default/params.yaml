@@ -99,8 +99,12 @@ params:
   # ラベル表示
   label:
     text: "Argon"
-    icon: ""
+    icon: "favicon.svg"
     iconHeight: 35
+
+  # アセット（favicon など）
+  assets:
+    favicon: "favicon.svg"
 
   # フッター
   footer:
