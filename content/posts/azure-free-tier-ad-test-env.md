@@ -1,7 +1,8 @@
 ---
 title: "Azure無料枠(2026年)でAD検証環境を3VM構築する方法"
+slug: "azure-free-tier-ad-test-env-2026"
 date: 2026-06-15
-draft: true
+draft: false
 tags: ["Azure", "ActiveDirectory", "WEF", "HyperV", "検証環境"]
 categories: ["infrastructure"]
 summary: "2026年にアップデートされたAzure無料枠を使い、Active Directoryの検証環境（AD/DNSサーバ、WEC、クライアント端末の3VM構成）をほぼ無料で構築する方法を解説します。過去に課題だったRunCommand問題やVM台数制限も現在は解決されています。"
