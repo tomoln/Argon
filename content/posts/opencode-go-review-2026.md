@@ -1,7 +1,7 @@
 ---
 title: "opencode go が便利という話"
 date: 2026-06-15
-draft: true
+draft: false
 categories: ["tech"]
 tags: ["opencode", "opencode-go", "ai-coding-assistant", "terminal"]
 ---
