@@ -2,7 +2,7 @@
 title: "VSCode+OpenRouterでAIコーディングする最適解【2026年版】"
 slug: "openrouter-vscode-ai-coding-2026"
 date: 2026-06-26
-draft: true
+draft: false
 categories: ["Tech"]
 tags: ["VSCode", "OpenRouter", "Claude Code", "Codex", "AI", "Cline", "GitHub Copilot"]
 description: "OpenRouterをVSCodeから使う4つの方法（Copilot BYOK/Cline/Continue.dev/OpenCode）を比較。Reddit実データによるClaude Code/Codex CLIとのベンチマークとコスト分析で最適解を導く。2026年6月時点のOpenRouter価格とVSCode設定を反映。"
