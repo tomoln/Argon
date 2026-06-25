@@ -1,7 +1,8 @@
 ---
 title: "同じモデルでもエージェントを分割する"
 slug: "why-split-ai-agents"
-date: 2026-06-26
+date: 2026-06-26T07:19:00+09:00
+lastmod: 2026-06-26T07:19:00+09:00
 draft: false
 categories: ["tech", "opencode"]
 tags: ["AIエージェント", "opencode", "Claude Code", "マルチエージェント", "LLM"]
