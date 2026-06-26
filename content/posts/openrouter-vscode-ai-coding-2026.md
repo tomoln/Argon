@@ -1,7 +1,7 @@
 ---
 title: "VSCode+OpenRouterでAIコーディングする最適解【2026年版】"
 slug: "openrouter-vscode-ai-coding-2026"
-date: 2026-06-26
+date: 2026-06-26T00:00:00+09:00
 draft: false
 categories: ["Tech"]
 tags: ["VSCode", "OpenRouter", "Claude Code", "Codex", "AI", "Cline", "GitHub Copilot"]
