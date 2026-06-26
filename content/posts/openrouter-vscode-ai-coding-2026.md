@@ -1,5 +1,5 @@
 ---
-title: "VSCode+OpenRouterでAIコーディングする最適解【2026年版】"
+title: "OpenRouterをVSCodeで使う"
 slug: "openrouter-vscode-ai-coding-2026"
 date: 2026-06-26T00:00:00+09:00
 draft: false
