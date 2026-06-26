@@ -2,7 +2,7 @@
 title: "subagentのコンテキスト分離を理解する"
 slug: "opencode-subagent-context-isolation"
 date: 2026-06-26
-draft: true
+draft: false
 categories: ["技術解説"]
 tags: ["OpenCode", "subagent", "マルチエージェント", "コンテキスト管理", "LLM"]
 description: "OpenCodeのsubagent（子エージェント）は呼び出すたびに完全に独立したChild Sessionとして動作する。db/sessionテーブルのparent_id構造・opencode exportの出力・実測データ量の3方向からコンテキスト分離の実態を検証し、Orchestratorパターンにおける設計上の示唆を導く。"
