@@ -2,7 +2,7 @@
 title: "CLIで動くDAWはあるのか？VST対応ヘッドレスDAWを総調査する"
 slug: "cli-daw-vst-2026"
 date: 2026-07-07
-draft: true
+draft: false
 categories: ["音楽制作"]
 tags: ["DAW", "VST", "CLI", "DawDreamer", "Renoise", "ヘッドレス", "Csound"]
 description: "ターミナルからVSTをロードしてレンダリングできるのか？CLIベースDAWの選択肢を徹底調査"
